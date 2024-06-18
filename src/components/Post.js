@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import './Post.css'
+import '../styles/Post.css'
 
 const BASE_URL = 'http://localhost:8000/';
 

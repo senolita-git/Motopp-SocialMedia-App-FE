@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './Login.css'; // Import CSS file for styling
+import '../styles/Login.css'; // Import CSS file for styling
 
 const BASE_URL = 'http://localhost:8000/';
 
 
-const Login = ({ setAuth }) => {
+const Login = ({ setAuth, setDeneme }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');

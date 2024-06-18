@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Switch, Redirect, Navigate } from 'react-router-dom';
 import './App.css';
-import Post from './Post';
-import Login from './Login';
+import Post from './components/Post';
+import Login from './components/Login';
 
 const BASE_URL = 'http://localhost:8000/';
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [auth, setAuth] = useState(false);
-
+  const [deneme, setDeneme] = useState(false);
   useEffect(() => {
     fetch(BASE_URL + 'posts/')
       .then(response => {
