@@ -1,0 +1,55 @@
+/* Center the login form in the middle of the page */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  /* Input container styling */
+  div {
+    margin-bottom: 15px;
+  }
+  
+  /* Label styling */
+  label {
+    margin-bottom: 5px;
+  }
+  
+  /* Input field styling */
+  input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Submit button styling */
+  button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Submit button hover effect */
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Error message styling */
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
