@@ -3,38 +3,53 @@ import { BrowserRouter as Router, Route, Routes, Switch, Redirect, Navigate } fr
 import './App.css';
 import Post from './components/Post';
 import Login from './components/Login';
+import Logout from './components/Logout';
 
 const BASE_URL = 'http://localhost:8000/';
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [auth, setAuth] = useState(false);
-  const [deneme, setDeneme] = useState(false);
+
   useEffect(() => {
-    fetch(BASE_URL + 'posts/')
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw response;
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      setAuth(true);
+
+      fetch(BASE_URL + 'posts/', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
-      .then(data => {
-        console.log("Fetched data: ", data); // Log the data to check its structure
-        if (Array.isArray(data)) {
-          setPosts(data);
-        } else {
-          console.error("API response is not an array:", data);
-        }
-      })
-      .catch(error => {
-        console.error("Error fetching posts:", error);
-        alert("Error fetching posts");
-      });
-  }, []);
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw response;
+        })
+        .then(data => {
+          console.log("Fetched data: ", data); // Log the data to check its structure
+          if (Array.isArray(data)) {
+            setPosts(data);
+          } else {
+            console.error("API response is not an array:", data);
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching posts:", error);
+          alert("Error fetching posts");
+        });
+    }
+  }, [auth]);
 
   return (
     <Router>
       <div className="app">
+        <header className="app-header">
+          <div className="header-left">
+            {auth && <Logout setAuth={setAuth} />} {/* Logout button */}
+          </div>
+        </header>
         <Routes>
           <Route
             path="/login"
