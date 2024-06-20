@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Switch, Redirect, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import Post from './components/Post';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import SignUp from './components/Signup';
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -54,6 +55,10 @@ function App() {
           <Route
             path="/login"
             element={auth ? <Navigate to="/" /> : <Login setAuth={setAuth} />}
+          />
+          <Route
+            path="/signup"
+            element={auth ? <Navigate to="/" /> : <SignUp setAuth={setAuth} />}
           />
           <Route
             path="/"
