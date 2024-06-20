@@ -9,6 +9,11 @@
     text-align: center;
 }
 
+.contents {
+
+    display: contents
+}
+
 h2 {
     margin-bottom: 20px;
     font-size: 24px;

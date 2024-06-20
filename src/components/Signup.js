@@ -45,7 +45,7 @@ const SignUp = ({ setAuth }) => {
         <div className="signup-container">
             <form onSubmit={handleSignUp}>
                 <h2>Sign Up</h2>
-                <div>
+                <div className='contents'>
                     <label htmlFor="email">Your email address</label>
                     <input
                         type="email"
@@ -56,7 +56,7 @@ const SignUp = ({ setAuth }) => {
                         required
                     />
                 </div>
-                <div>
+                <div className='contents'>
                     <label htmlFor="username">Choose a username</label>
                     <input
                         type="text"
@@ -67,7 +67,7 @@ const SignUp = ({ setAuth }) => {
                         required
                     />
                 </div>
-                <div>
+                <div className='contents'>
                     <label htmlFor="password">Choose a password</label>
                     <input
                         type="password"

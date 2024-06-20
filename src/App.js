@@ -5,6 +5,7 @@ import Post from './components/Post';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import SignUp from './components/Signup';
+import logo from '../src/assets/Ontwerp-zonder-titel.png'
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -45,8 +46,9 @@ function App() {
 
   return (
     <Router>
-      <div className="app">
+      <div>
         <header className="app-header">
+        <img src={logo} alt="Motapp Logo" className="header-logo" />
           <div className="header-left">
             {auth && <Logout setAuth={setAuth} />} {/* Logout button */}
           </div>
