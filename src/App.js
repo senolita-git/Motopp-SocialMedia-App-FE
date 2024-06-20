@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import SignUp from './components/Signup';
 import logo from '../src/assets/Ontwerp-zonder-titel.png'
+import Header from './components/Header';
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -47,12 +48,6 @@ function App() {
   return (
     <Router>
       <div>
-        <header className="app-header">
-        <img src={logo} alt="Motapp Logo" className="header-logo" />
-          <div className="header-left">
-            {auth && <Logout setAuth={setAuth} />} {/* Logout button */}
-          </div>
-        </header>
         <Routes>
           <Route
             path="/login"
@@ -66,15 +61,18 @@ function App() {
             path="/"
             element={
               auth ? (
-                <div className="app_posts">
-                  {Array.isArray(posts) && posts.length > 0 ? (
-                    posts.map(post => (
-                      <Post key={post.id} post={post} />
-                    ))
-                  ) : (
-                    <p>No posts available</p>
-                  )}
-                </div>
+                <>
+                  <Header setAuth={setAuth} auth={auth} /> {/* Only render Header when authenticated */}
+                  <div className="app_posts">
+                    {Array.isArray(posts) && posts.length > 0 ? (
+                      posts.map(post => (
+                        <Post key={post.id} post={post} />
+                      ))
+                    ) : (
+                      <p>No posts available</p>
+                    )}
+                  </div>
+                </>
               ) : (
                 <Navigate to="/login" />
               )
