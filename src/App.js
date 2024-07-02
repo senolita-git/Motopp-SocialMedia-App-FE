@@ -7,6 +7,8 @@ import Logout from './components/Logout';
 import SignUp from './components/Signup';
 import logo from '../src/assets/Ontwerp-zonder-titel.png'
 import Header from './components/Header';
+import Profile from './components/Profile';
+import EditProfile from './components/Editprofile';
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -72,6 +74,45 @@ function App() {
                       <p>No posts available</p>
                     )}
                   </div>
+                </>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/profile/:user_id"  // Define user_id as a URL parameter
+            element={
+              auth ? (
+                <>
+                  <Header setAuth={setAuth} auth={auth} />
+                  <Profile />
+                </>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/edit-profile"  // Add the new route for editing the profile
+            element={
+              auth ? (
+                <>
+                  <Header setAuth={setAuth} auth={auth} />
+                  <EditProfile />
+                </>
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/edit-profile"  // Add route for Edit Profile page
+            element={
+              auth ? (
+                <>
+                  <Header setAuth={setAuth} auth={auth} />
+                  <EditProfile />
                 </>
               ) : (
                 <Navigate to="/login" />

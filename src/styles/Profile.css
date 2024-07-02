@@ -1,0 +1,158 @@
+/* src/Profile.css */
+.profile-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 200px;
+    ;
+}
+
+.profile-container {
+    border: 1px solid #ccc;
+    border-radius: 190px 190px 0 0; /* Rounded top corners */
+    padding: 20px;
+    width: 300px; /* Width of the container */
+    height: 500px; /* Height of the container */
+    text-align: center;
+    margin: 20px; /* Align to right */
+    position: fixed; /* Fix it on the right side */
+    left: 20px; /* Distance from the right edge */
+    top: 53%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: #fff; /* Background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visual separation */
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    margin: 25px auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure anything outside the circle is hidden */
+    background-color: #f0f0f0; /* Optional: Add a background color */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    border-radius: 50%;
+}
+
+.profile-details h2 {
+    margin: 10px 0;
+    font-size: 29px;
+    color: #000;
+}
+.small-link {
+    font-size: smaller;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.profile-details a {
+    display: block;
+    margin: 10px 0;
+    color: #1a0dab;
+    text-decoration: none;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat span {
+    display: block;
+    font-size: 18px;
+    color: #000;
+}
+
+.profile-actions button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .profile-actions button:hover {
+    background: linear-gradient(to right, #5a0ecb, #1e64fc);
+  }
+
+.profile-button {
+    margin-right: 10px; /* Add space between buttons */
+    background-color: white;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px; /* Ensure consistent font size */
+    text-decoration: none;
+}
+
+.profile-button:hover {
+    background-color: #f0f0f0;
+}
+
+.posts-wall {
+    background-color: #fff; /* White background */
+    padding: 20px; /* Add some padding */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visual separation */
+    margin-left: 190px; /* Adjust as needed to position the container */
+    margin-top: 20px; /* Add some space above the container */
+    width: calc(100% - 100px); /* Adjust width as needed, considering the left margin */
+}
+
+.posts-container {
+    margin-left: 350px; /* Adjust margin to make space for the fixed profile container */
+    padding: 20px;
+    width: calc(100% - 370px); /* Adjust width to take up remaining space */
+}
+
+.posts-header {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px; /* Adjust space between text and underline */
+    margin-left: 30px; /* Adjust as needed to move the header to the right */
+}
+
+.posts-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150%; /* Make the underline as long as the header */
+    height: 3px; /* Adjust thickness of the underline */
+    background-color: black; /* Change underline color if needed */
+}
+
+
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post_caption {
+    font-weight: bold;
+}

@@ -47,7 +47,7 @@ input::placeholder {
 
 button {
     height: 40px;
-    background-color: #d1236f;
+    background-color: #099609;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-    background-color: #b51d5c;
+    background-color: #04551b;
 }
 
 .terms {

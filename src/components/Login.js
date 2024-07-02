@@ -27,6 +27,7 @@ const Login = ({ setAuth }) => {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('user_id', data.user_id); // Store the user_id in localStorage
         setAuth(true);
       } else {
         const errorData = await response.json();
@@ -45,13 +46,13 @@ const Login = ({ setAuth }) => {
         <img src={logo} alt="Motapp Logo" className="app-logo" />
         <form onSubmit={handleLogin} className="login-form">
           <div className="input-group">
-            <label htmlFor="username">Email</label>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter email"
+              placeholder="Enter username"
               required
             />
           </div>
