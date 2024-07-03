@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Signup.css';
+import { Link } from 'react-router-dom';
 
 const BASE_URL = 'http://localhost:8000/';
 
@@ -84,6 +85,9 @@ const SignUp = ({ setAuth }) => {
                 <button type="submit">Create your account</button>
                 {error && <div className="error">{error}</div>}
             </form>
+            <div className="back-to-login">
+                <Link to="/login">Already have an account? Back to Login</Link>
+            </div>
         </div>
     );
 };

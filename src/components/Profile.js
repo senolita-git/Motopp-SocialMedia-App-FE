@@ -59,7 +59,7 @@ const Profile = () => {
                         <h2>{user.username}</h2>
                         <p>{user.name} {user.surname}</p>
                         <p>{user.bio}</p>
-                        <p><a href="{user.social_media_link}" className="small-link">{user.social_media_link}</a></p>
+                        <p><a href={user.social_media_link} className="small-link" target="_blank" rel="noopener noreferrer">{user.social_media_link}</a></p>
                     </div>
                     <div className="profile-stats">
                         <p>{friends.length} <br/> Friends</p>

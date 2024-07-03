@@ -13,7 +13,9 @@ const Header = ({ setAuth, auth }) => {
   const userId = localStorage.getItem('user_id');
   return (
     <header className="app-header">
-      <img src={logo} alt="Motapp Logo" className="header-logo" />
+      <Link to="/"> {/* Wrap the logo with Link */}
+        <img src={logo} alt="Motapp Logo" className="header-logo" />
+      </Link>
       <div className="header-left">
         {auth && (
           <>

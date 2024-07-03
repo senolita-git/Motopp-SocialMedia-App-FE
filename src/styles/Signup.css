@@ -80,3 +80,17 @@ button:hover {
     font-size: 14px;
     margin-top: 10px;
 }
+
+.back-to-login {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.back-to-login a {
+    color: #666;
+    text-decoration: none;
+}
+
+.back-to-login a:hover {
+    text-decoration: underline;
+}
